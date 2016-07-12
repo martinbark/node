@@ -302,7 +302,7 @@
             'deps/v8/src/third_party/vtune/v8vtune.gyp:v8_vtune'
           ],
         }],
-        [ 'v8_inspector=="true"', {
+        [ 'v8_inspector=="true" and node_use_openssl =="true"', {
           'defines': [
             'HAVE_INSPECTOR=1',
             'V8_INSPECTOR_USE_STL=1',
@@ -828,7 +828,7 @@
       ],
 
       'conditions': [
-        ['v8_inspector=="true"', {
+        ['v8_inspector=="true" and node_use_openssl =="true"', {
           'sources': [
             'src/inspector_socket.cc',
             'test/cctest/test_inspector_socket.cc'
