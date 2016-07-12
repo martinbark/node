@@ -4,7 +4,7 @@
 #include <features.h>
 #endif
 
-#if defined(__linux__) && !defined(__GLIBC__) || defined(_AIX)
+#if defined(__linux__) && !defined(__GLIBC__) || defined(_AIX) || defined(__UCLIBC__) && !defined (__UCLIBC_HAS_BACKTRACE__)
 #define HAVE_EXECINFO_H 0
 #else
 #define HAVE_EXECINFO_H 1
